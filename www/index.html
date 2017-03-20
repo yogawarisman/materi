@@ -66,6 +66,16 @@
 				location.reload(true);
 				AnsweredCorrectly=0;
 			}
+		var s = document.getElementById('myAudio');
+		function enableMute() { 
+			s.muted = true;
+		} 
+		function disableMute() { 
+			s.muted = false;
+		}
+		function checkMute() { 
+			alert(s.muted);
+		}
     </script>
 	
     <title>Materi</title>
@@ -74,135 +84,251 @@
 <body>
     <div id="app">
        <div id="home-page" data-role="page">
-                <div data-role="content" >
+       		<div data-role="content" >
                     <div id="logoContainer" class="centerText">
                             <img src="img/hujan.jpg" id="logo"  />
                     </div>
+			<audio id="myAudio" controls autoplay >
+			<source src="img/pixiedust.ogg" type="audio/ogg">
+			Your browser does not support the audio element.
+			code to autoplay loop: "audio controls autoplay preload loop"
+			</audio>
                     <div id="menu">
-                        <a data-icon="flat-menu" data-theme="a" href="#kata-page" data-role="button">KATA MEREKA</a>
-                        <a data-icon="flat-menu" data-theme="b" href="#sebelum-page"  data-role="button">SEBELUM HUJAN</a>
-                        <a data-icon="flat-menu" data-theme="g" href="#gerimis-page"  data-role="button">GERIMIS</a>
-                        <a data-icon="flat-menu" data-theme="d" href="#hujan-page"  data-role="button">HUJAN</a>
+                        <a data-icon="flat-none" data-theme="a" href="#silabus-page" data-role="button">SILABUS</a>
+                        <a data-icon="flat-none" data-theme="b" href="#materi-page"  data-role="button">MATERI</a>
+                        <a data-icon="flat-none" data-theme="g" href="#evaluasi-page"  data-role="button">EVALUASI</a> 
                         <a data-icon="flat-menu" data-theme="e" href="#reda-page"  data-role="button">REDA</a>
-						<a data-icon="flat-menu" data-theme="e" href="#quiz-page"  data-role="button">QUIZ</a>
-                        <a data-icon="flat-menu" data-theme="f" href="#tentang-page"  data-role="button">TENTANG PENULIS</a>
+			<a data-icon="flat-menu" data-theme="e" href="#quiz-page"  data-role="button">QUIZ</a>
+                        <a data-icon="flat-menu" data-theme="f" href="#tentang-page"  data-role="button">TENTANG</a>
                         <a data-icon="flat-cross" data-theme="a" href="#keluar" data-rel="popup" data-role="button">Keluar</a>					
                     	<div id="keluar" data-role="popup" data-overlay-theme="a" data-theme="a" data-dismissable="false" class="ui-corner-all">		
-							<div data-role="header" data-theme="a" class="ui-corner-top">
-								<h1>Yakin Keluar?</h1>                        
-							</div>
-							<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
-							<a data-icon="delete" href="#" data-role="button" data-inline="true" data-rel="back" data-theme="d" >Tidak</a>
-							<a data-icon="check" href="#" data-role="button" data-inline="true"  onClick="navigator.app.exitApp()" data-transition="pop" data-theme="f" >Ya</a>
-							</div>
-						</div>
+				<div data-role="header" data-theme="a" class="ui-corner-top">
+						<h1>Yakin Keluar?</h1>                        
+					</div>
+			<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
+			<a data-icon="delete" href="#" data-role="button" data-inline="true" data-rel="back" data-theme="d" >Tidak</a>
+			<a data-icon="check" href="#" data-role="button" data-inline="true"  onClick="navigator.app.exitApp()" data-transition="pop" data-theme="f" >Ya</a>
+			</div>
+			</div>
                     </div>
                     
                 </div>
        </div><!-- /page  -->
 
-            <div  id="kata-page" data-role="page">
+            <div  id="silabus-page" data-role="page">
                 <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
                     <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>KATA MEREKA</h1>
+                    <h1>Silabus</h1>
                 </div>
-                <div data-role="content" style="font-size:14px" >
-                  <p>Bahwa pria cenderung menggunakan otak kiri, tampaknya tidak berlaku untuk Gun. Berlapis kata-kata indah yang mengorbit dalam rangkaian kalimat "mewah" yang bisa kita nikmati di buku ini. Mustahil bisa diproduksi laki-laki biasa yang rata-rata otaknya hanya bisa memproduksi tujuh ribuan kata-kata.</p>
-                  <p>Dan inilah jawabnya, mengapa gadis-gadis aktivis di Forum Indonesia Muda dan para belia kembang kampus, begitu banyak membicarakan tulisan Gun yang mengantarkannya sebagai seleb tumblr ini. </p>
-                  <p>Hebatnya lagi, setiap kepingan peristiwa biasa bisa jadi inspirasi sempurna bagi Gun. Semua resah dan siasah, semua galau dan yakin, semua pikir hingga dzikirnya bisa kita nikmati menjadi bacaan lezat nan istimewa. Karena itu saya curiga, jangan-jangan hippocampus bujangan muda ini juga lebih besar ketimbang laki laki biasa, sehingga ia bisa mengingat setiap keping peristiwa dengan rinci, bahkan melebihi perempuan.</p>
-                  <p>Saya dan suami beberapa hari ini merasa beruntung bisa menikmati olah rasa dalam adonan kata-kata bertuahnya Gun. Renyah dan bergizi. Kental tapi mengalir. Sarat pengingat, untuk hidup yang menghargai hakikat.</p>
-                  <p><strong>(Tatty Elmir-Penulis novel Keydo, pendiri Forum Indonesia Muda)</strong></p>
-                                
-
+                <div data-role="content" style="font-size:14px" id="silabus">
+					<div data-role="collapsible" data-theme="b"  data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" >
+					    <h4>Arus listrik dan arus elektron</h4>
+					    <ul data-role="listview" data-inset="false">
+					        <li>muatan listrik</li>
+					        <li>definisi arus</li>
+					        <li>Read-only list item 3</li>
+					    </ul>
+					</div>
+					<div data-role="collapsible" data-theme="b"  data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" >
+					    <h4>Bahan-bahan listrik,</h4>
+					    <ul data-role="listview" data-inset="false">
+					        <li>konduktor</li>
+					        <li>isolator</li>
+					        <li>bahan semikonduktor</li>
+					    </ul>
+					</div>
+					<div data-role="collapsible" data-theme="b"  data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" >
+					    <h4>Elemen pasif</h4>
+					    <ul data-role="listview" data-inset="false">
+					        <li>resistor dan resistansi</li>
+					        <li>induktor dan induktansi</li>
+					        <li>kapasitor dan kapasitansi</li>
+					    </ul>
+					</div>
+					<div data-role="collapsible" data-theme="b"  data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" >
+					    <h4>Elemen aktif</h4>
+					    <ul data-role="listview" data-inset="false">
+					        <li>sumber arus</li>
+					        <li>sumber tegangan</li>					       
+					    </ul>
+					</div>
+					<div data-role="collapsible" data-theme="b"  data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" >
+					    <h4>Rangkaian resistif arus searah</h4>
+					    <ul data-role="listview" data-inset="false">
+					        <li>seri, paralel</li>
+					        <li>seri-paralel</li>
+							<li>hukum ohm</li>
+							<li>hukum kirchoff</li>     
+					    </ul>
+					</div>
 				</div>
                 
             </div>
             
-			<div  id="sebelum-page" data-role="page">
+		<div  id="materi-page" data-role="page">
                 <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
                     <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>SEBELUM HUJAN</h1>
+                    <h1>MATERI</h1>
                 </div>
+				<a data-icon="flat-menu" data-theme="e" href="#arus-page" data-role="button">Arus listrik dan arus elektron</a>
+                <a data-icon="flat-menu" data-theme="b" href="#bahanListrik-page"  data-role="button">Bahan-bahan listrik</a>
+                <a data-icon="flat-menu" data-theme="g" href="#elemen-page"  data-role="button">Elemen pasif dan Elemen aktif</a>
+                <a data-icon="flat-menu" data-theme="d" href="#rangkaian-page"  data-role="button">Rangkaian resistif arus searah</a>
                 <div data-role="content" style="font-size:14px" >
-                <p>Hujan dan matahari adalah perpaduan yang unik, saling bergantung, menjadi sebab dan akibat. Hujan dan matahari memaksa orang-orang berlindung di balik tempat-tempat teduh. Kecuali orang-orang yang berani menghadapi dingin dan terik.</p>
+			    <p>Hujan dan matahari adalah perpaduan yang unik, saling bergantung, menjadi sebab dan akibat. Hujan dan matahari memaksa orang-orang berlindung di balik tempat-tempat teduh. Kecuali orang-orang yang berani menghadapi dingin dan terik.</p>
                 <p>Hujan Matahari lahir sebagai sebuah tetes-tetes perenungan, bahwa hidup ini sungguh menyimpan banyak hikmah. Terima kasih untuk siapa pun yang telah menjadi hujan dalam hidup saya. Orang-orang yang mengajari saya tentang hidup, tentang cinta, tentang pemahaman yang baik. Terima kasih untuk setiap orang yang hadir dalam hidup saya meski harus pergi dan tak pernah tinggal lama. Datang untuk memberikan pembelajaran yang berharga. Pergi pun meninggalkan pembelajaran. </p>
                 <p>Terima kasih juga untuk setiap orang yang menjadi matahari. Orang-orang yang memberikan sinarnya, menunjukkan jalan mana yang sebaiknya saya ambil ketika saya tidak tahu arah. Terima kasih atas pencerahan yang diberikan melalui berbagai cerita atau sekadar tertawa. Selamat hujan-hujanan. Jangan menghindar. Hujan itu rahmat.</p>              
                 </div>
+				<div data-role="footer" data-id="footer" id="footer" data-position="fixed" class="ui-footer">
+                <marquee>Buat alur materi, alur tampilan dan link halaman</marquee>                        
+                </div>
             </div>
 
-			<div  id="gerimis-page" data-role="page">
+		<div  id="arus-page" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#materi-page" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Arus listrik dan Arus elektron</h1>
+                </div>
+				<div data-role="content" style="font-size:14px" >
+					<h2>Atom</h2>
+					<div data-role="content" class="centerText">
+						<img src="img/atom.jpg" id="atom1"/>
+					</div>
+					<p>Pengertian Atom adalah partikel terkecil penyusun materi. Atom terdiri atas beberapa partikel dasar, yaitu elektron, proton, dan neutron. Adanya partikel-partikel inilah yang menyebabkan atom mempunyai sifat listrik, sebab elektron bermuatan negatif, proton bermuatan positif, dan neutron tidak bermuatan.</p>
+					<p>Atom unsur yang satu berbeda dengan atom unsur yang lain disebabkan adanya perbedaan susunan partikel subatom yang menyusunnya.</p>
+					<p>Dalam modul ini Anda akan mempelajari beberapa teori atom dan perkembangan sistem periodik unsur. Seperti kita ketahui bahwa semua benda di alam ini tentunya dibentuk dari partikel-partikel yang amat kecil yang disebut atom. Pada perkembangannya ternyata atom bukanlah partikel yang paling kecil sebagai pembentuk suatu benda atau senyawa, akan tetapi atom terbentuk dari partikel-partikel dasar yang lebih kecil lagi. Dalam modul ini pula Anda akan dapat membandingkan beberapa pendapat para ahli tentang struktur atom.</p>
+					<p>Dari sekian banyak unsur yang ada, tentu orang akan mengalami kesulitan bila mempelajari sifat-sifat unsur tersebut. Untuk memudahkan, maka beberapa ahli mengelompokkan unsur-unsur tersebut. Pertama-tama dilakukan pengelompokan secara sederhana yaitu berdasarkan sifat kelogaman, selanjutnya pengelompokan berdasarkan kenaikan massa atomnya. Pengelompokan tersebut ternyata terdapat banyak kelemahan, akhirnya pengelompokan unsur-unsur dilakukan berdasarkan kenaikan nomor atom. Pengelompokan ini merupakan suatu kemajuan yang pesat, karena dapat mengkaitkan dengan sifat kimia, sifat fisika, dan massa unsur sekalipun masih terdapat sedikit kelemahan.</p>
+					<a data-icon="flat-none" data-theme="b" href="#modelAtom-page"  data-role="button" >Perkembangan Model Atom</a>
+					<a data-icon="flat-none" data-theme="b" href="#muatanListrik-page"  data-role="button">Muatan Listrik</a>
+					<a data-icon="flat-none" data-theme="b" href="#definisiArus-page"  data-role="button">Definisi Arus</a>
+					<div data-role="footer" data-id="footer" id="footer" data-position="fixed" class="ui-footer">
+						<marquee>Arus listrik dan Arus elektron</marquee>                        
+					</div>
+				</div>
+			</div>
+				<div  id="arus-page" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#materi-page" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Arus listrik dan Arus elektron</h1>
+                </div>
+				<div data-role="content" style="font-size:14px" >
+					<h2>Atom</h2>
+					<div data-role="content" class="centerText">
+						<img src="img/atom.jpg" id="atom1"/>
+					</div>
+					<p>Pengertian Atom adalah partikel terkecil penyusun materi. Atom terdiri atas beberapa partikel dasar, yaitu elektron, proton, dan neutron. Adanya partikel-partikel inilah yang menyebabkan atom mempunyai sifat listrik, sebab elektron bermuatan negatif, proton bermuatan positif, dan neutron tidak bermuatan.</p>
+					<p>Atom unsur yang satu berbeda dengan atom unsur yang lain disebabkan adanya perbedaan susunan partikel subatom yang menyusunnya.</p>
+					<p>Dalam modul ini Anda akan mempelajari beberapa teori atom dan perkembangan sistem periodik unsur. Seperti kita ketahui bahwa semua benda di alam ini tentunya dibentuk dari partikel-partikel yang amat kecil yang disebut atom. Pada perkembangannya ternyata atom bukanlah partikel yang paling kecil sebagai pembentuk suatu benda atau senyawa, akan tetapi atom terbentuk dari partikel-partikel dasar yang lebih kecil lagi. Dalam modul ini pula Anda akan dapat membandingkan beberapa pendapat para ahli tentang struktur atom.</p>
+					<p>Dari sekian banyak unsur yang ada, tentu orang akan mengalami kesulitan bila mempelajari sifat-sifat unsur tersebut. Untuk memudahkan, maka beberapa ahli mengelompokkan unsur-unsur tersebut. Pertama-tama dilakukan pengelompokan secara sederhana yaitu berdasarkan sifat kelogaman, selanjutnya pengelompokan berdasarkan kenaikan massa atomnya. Pengelompokan tersebut ternyata terdapat banyak kelemahan, akhirnya pengelompokan unsur-unsur dilakukan berdasarkan kenaikan nomor atom. Pengelompokan ini merupakan suatu kemajuan yang pesat, karena dapat mengkaitkan dengan sifat kimia, sifat fisika, dan massa unsur sekalipun masih terdapat sedikit kelemahan.</p>
+					<a data-icon="flat-none" data-theme="b" href="#modelAtom-page"  data-role="button" >Perkembangan Model Atom</a>
+					<a data-icon="flat-none" data-theme="b" href="#muatanListrik-page"  data-role="button">Muatan Listrik</a>
+					<a data-icon="flat-none" data-theme="b" href="#definisiArus-page"  data-role="button">Definisi Arus</a>
+					<div data-role="footer" data-id="footer" id="footer" data-position="fixed" class="ui-footer">
+						<marquee>Arus listrik dan Arus elektron</marquee>                        
+					</div>
+				</div>
+			</div>
+			<div  id="modelAtom-page" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#arus-page" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Perkembangan Model Atom</h1>
+                </div>
+				<div data-role="content" style="font-size:14px" >
+				<h2>Model Atom Dalton</h2>
+				<p>Masa modern kimia diawali sejak proposal John Dalton tentang teori atom dalam bukunya “New system of chemical philosophy” 1808. Jauh sebelum Dalton sebenarnya beberapa teori telah diajukan oleh ilmuwan Yunani Leucippos yang dilanjutkan oleh Democritos pada abad ketiga sebelum Masehi. Akan tetapi teori Dalton ini sangat melengkapi dan lebih cocok, sehingga teori ini mampu menumbuhkan ilmu kimia.</p>
+				<p>Pada tahun 1808, John Dalton seorang ahli kimia bangsa Inggris mengemukakan gagasannya tentang atom sebagai partikel penyusun materi. Menurut teori atom Dalton:</p>
+				<p>Atom merupakan partikel terkecil yang tidak dapat dibagi lagi. Atom suatu unsur yang sama mempunyai bobot yang sama, sedang unsur yang berbeda atomnya akan berbeda pula, yang berarti mempunyai bobot berbeda. 
+				<p>Senyawa dikatakan sebagai hasil dari penggabungan atom-atom yang tidak sama dengan perbandingan bobot yang proporsional dengan bobot atom yang bergabung itu. Reaksi kimia hanya melibatkan penataulangan atom-atom sehingga tidak ada atom yang berubah akibat reaksi kimia.</p> 
+				<p>Kata atom sebenarnya berasal dari bahasa Latin atomos, yang berarti tidak terbelahkan.</p>
+				<h2>Model Atom Thomson</h2>
+				<p>Penemuan elektron atas jasa J. J Thomson dan R. Millikan pada tahun-tahun pertama abad ke-20 memberikan bukti ketidaksempurnaan model atom Dalton. J.J Thomson merinci model atom Dalton yang mengemukakan, bahwa di dalam atom terdapat elektron-elektron yang tersebar secara merata dalam “bola” bermuatan positip. Keadaannya mirip roti kismis. Kismis (diumpamakan sebagai elektron) tersebar dalam seluruh bagian dari roti (diumpamakan sebagai bola bermuatan positip).</p>
+				<h2>Model Atom Rutherford </h2>
+				<p>Rutherford mengajukan teori atomnya, yaitu :</p>
+				<p>Sebagian besar atom berupa ruang kosong, sehingga semua massa atom terpusat pada inti atom yang sangat kecil.</p>
+				<p>Atom disusun dari :</p>
+				<p>- Inti atom yang bermuatan positip.</p>
+				<p>- Elektron-elektron yang bermuatan negatif yang mengelilingi inti atom.</p>
+				<p>Seluruh proton terpusat di dalam inti atom.</p>
+				<p>Banyaknya proton di dalam inti sama dengan jumlah elektron yang mengelilingi inti atom, sehingga atom bersifat netral.</p>
+				<p>Dari teorinya, Rutherford memodelkan atom sebagaimana pada sistem tata surya, yaitu elektron-elektron bergerak mengelilingi inti atom seperti planet-planet mengitari matahari. Sebagai contoh, atom hidrogen mempunyai inti yang bermuatan +1, maka muatan ini diimbangi oleh 1 elektron yang mengitari inti.</p>
+				<p>Satu keberatan dari postulat Rutherford adalah selama elektron bergerak dalam suatu orbit, maka ada percepatan menuju ke pusat, elektron ini secara kontinyu mengemisikan radiasi dan secara berangsur-angsur akan melepaskan energi yang akhirnya akan jatuh ke dalam inti.</p>
+				<p>Hal ini adalah tidak mungkin terjadi karena atom itu stabil lagi pula model ini tidak dapat memperoleh data dari penelitian spektrum atom unsur-unsur.</p>
+				<h2>Model Atom Bohr</h2>
+				<p>Tahun 1913, Niels Bohr mengusulkan suatu model atom yang dapat dijelaskan melalui spektra hidrogen. Ia menerima konsep ini seperti yang diusulkan oleh Rutherford,akan tetapi dengan menerapkan teori kuantum radiasi seperti yang dikembangkan oleh Planck dan Einstein dalam menerangkan sifat-sifat sistem planet elektron.</p>
+				<p>Postulat Bohr berbunyi :</p>
+				<p>Elektron dalam suatu atom bergerak mengitari sekeliling inti pada orbit tertentu. Setiap orbit mempunyai tingkat energi tertentu dan energi suatu elektron adalah tetap selama berada pada orbitnya. Elektron yang berada pada tingkat ini disebut tingkat stasioner dan setiap tingkat energi dinamakan tingkat energi atau kulit. Elektron pada tingkat energi ini tidak meradiasikan energi.</p>
+				<p>Emisi dan absorpsi energi dalam bentuk radiasi hanya dapat dihasilkan jika suatu elektron pindah dari tingkat stasioner ke tingkat lainnya.</p>
+				<p>Energi tidak diemisikan atau diabsorpsi secara pelan-pelan, tetapi dalam satuan/paket h.u (disebut kuantum), dengan h adalah tetapan Planck dan u adalah frekuensi energi yang diradiasikan.</p>
+				<p>Lebih jauh tingkat energi dari inti, maka lebih besar pula energinya. Energi diabsorpsi bila elektron melompat dari orbit bagian dalam ke orbit yang lebih luar. Energi akan diemisikan bila elektron bergerak dari orbit yang luar ke orbit yang lebih dalam.</p>
+				<p>Besarnya kuantum yang diemisikan atau diabsorpsikan dapat ditentukan dari tingkat energi elektron mula-mula dan tingkat akhir setelah mencapai keadaan stasioner. Bila E2 dan E1 masing-masing adalah tingkat energi awal dan akhir, sedang ? adalah frekuensi maka :</p>
+				<p>å E = E1 – E2 = h.u</p>
+				<p>Energi yang ada pada setiap orbit dipengaruhi oleh kondisi di mana momentum anguler (m.u.r) elektron yang bergerak dalam orbitnya mempunyai nilai tertentu yang secara sederhana merupakan kelipatan dari h/2u. Dengan m = massa elektron, u = kecepatan, r = jari-jari orbit, h = tetapan Planck, dan n = orbit yang ditempati elektron (1, 2, 3, …… atau sesuai huruf K, L, M, … …. ).</p>
+				<h2>Model Atom Mekanika Gelombang</h2>
+				<p>Pada tahun 1924, Louis de Broglie ahli fisika Prancis pemenang hadiah Nobel tahun 1929, menyimpulkan bahwa elektron dalam atom dapat dipandang sebagai partikel dan gelombang. Sebagai akibat dualistis sifat elektron, Heisenberg pemenang hadiah nobel untuk bidang fisika tahun 1926 mengemukakan azas ketidakpastian, yakni tidak mungkin mengetahui secara bersamaan kedudukan dan kecepatan gerak elektron.</p>
+				<p>Dengan alasan ini lintasan elektron yang digambarkan Bohr tidak mungkin ada. Yang dapat dikatakan adalah elektron dalam atom mempunyai kebolehjadian ditemukan dalam ruang-ruang tertentu dalam atom yang disebut orbital. Gagasan bahwa elektron berada dalam orbital-orbital di seputar inti atom merupakan model atom yang mutakhir.</p>
+				<p>Pada tahun 1926, Erwin Schrodinger seorang ahli fisika Austria pemenang hadiah nobel untuk bidang fisika tahun 1933, berhasil merumuskan persamaan gelombang untuk menggambarkan gerakan elektron dalam atom. Energi dan bangun ruang orbital-orbital sebagaimana yang telah kita pelajari, diturunkan berdasarkan perhitungan dengan menggunakan persamaan gelombang Schrodinger.</p>
+				<a data-icon="flat-none" data-theme="b" href="#arus-page"  data-role="button" data-position="footer">Kembali</a>		
+				</div>
+				<div data-role="footer" data-id="footer" id="footer" data-position="fixed" class="ui-footer">
+                <marquee>Perkembangan Model Atom</marquee>                        
+                </div>
+			</div>
+			
+			<div  id="muatanListrik-page" data-role="page">
+			<div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#arus-page" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Muatan Listrik</h1>
+            </div>
+			<div data-role="content" style="font-size:14px" >
+			<p>Muatan listrik adalah muatan dasar yang dimiliki suatu benda, yang membuatnya mengalami gaya pada benda lain yang berdekatan dan juga memiliki muatan listrik. Simbol Q sering digunakan untuk menggambarkan muatan.</p> 
+			<p>Sistem Satuan Internasional dari satuan Q adalah coulomb, yang merupakan 6.24 x 1018 muatan dasar. Q adalah sifat dasar yang dimiliki oleh materi baik itu berupa proton (muatan positif) maupun elektron (muatan negatif).</p> 
+			<p>Muatan listrik total suatu atom atau materi ini bisa positif, jika atomnya kekurangan elektron. Sementara atom yang kelebihan elektron akan bermuatan negatif. Besarnya muatan tergantung dari kelebihan atau kekurangan elektron ini, oleh karena itu muatan materi/atom merupakan kelipatan dari satuan Q dasar.</p> 
+			<p>Dalam atom yang netral, jumlah proton akan sama dengan jumlah elektron yang mengelilinginya (membentuk muatan total yang netral atau tak bermuatan).</p>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" class="ui-footer">
+                <marquee>Buat alur materi, alur tampilan dan link halaman</marquee>                        
+            </div>
+			</div>
+			<div  id="definisiArus-page" data-role="page">
+				<div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#arus-page" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Definisi Arus</h1>
+				</div>
+				<div data-role="content" style="font-size:14px">
+				<p>Arus listrik adalah banyaknya muatan listrik yang disebabkan dari pergerakan elektron-elektron, mengalir melalui suatu titik dalam sirkuit listrik tiap satuan waktu. [1] Arus listrik dapat diukur dalam satuan Coulomb/detik atau Ampere.[1] 
+				Contoh arus listrik dalam kehidupan sehari-hari berkisar dari yang sangat lemah dalam satuan mikroAmpere ( {\displaystyle \mu A} {\displaystyle \mu A}) seperti di dalam jaringan tubuh hingga arus yang sangat kuat 1-200 kiloAmpere (kA) seperti yang terjadi pada petir.[2][3]
+				Dalam kebanyakan sirkuit arus searah dapat diasumsikan resistansi terhadap arus listrik adalah konstan sehingga besar arus yang mengalir dalam sirkuit bergantung pada voltase dan resistansi sesuai dengan hukum Ohm.[1]</p>
+				<p>Arus listrik merupakan satu dari tujuh satuan pokok dalam satuan internasional.[4] Satuan internasional untuk arus listrik adalah Ampere (A).[4] Secara formal satuan Ampere didefinisikan sebagai arus konstan yang, bila dipertahankan, akan menghasilkan gaya sebesar 2 x 10-7 Newton/meter di antara dua penghantar lurus sejajar, dengan luas penampang yang dapat diabaikan, berjarak 1 meter satu sama lain dalam ruang hampa udara.[4] </p>
+				</div>
+			</div>
+			<div  id="bahanListrik-page" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Bahan-bahan Listrik</h1>
+                </div>
+			</div>
+			<div  id="elemen-page" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Elemen pasif dan Elemen aktif</h1>
+                </div>
+			</div>
+			<div  id="rangkaian-page" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#" data-rel="back" data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+                    <h1>Rangkaian Resistif Arus Searah</h1>
+                </div>
+			</div>
+			<div  id="evaluasi-page" data-role="page">
                 <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
                     <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>GERIMIS</h1>
+                    <h1>EVALUASI</h1>
                 </div>
 				<div data-role="content" style="font-size:14px" >
                 	<h2>Kamu Baik, Masa Lalumu Tidak</h2>
-                    <p><em>Perempuan lebih suka dengan laki-laki yang datang dan membicarakan masa depan, bukan masa lalu.
-						</em></p>                    
-                    <p>Pagi itu, temanku yang berada jauh di tempat lain mengirimkan pesan pendek. Ponsel yang berdering dengan nomor telepon luar negeri, kukira dia tidak akan merespon pertanyaanku beberapa pekan lalu.</p>
-                    <p>Aku merasa setiap orang memiliki rahasia. Rahasia yang berkaitan dengan (si)apapun. Yang apabila rahasia itu dibuka, mungkin dia akan merasa hina di hadapan orang lain, merasa hilang harga dirinya. Pernah membaca roman <em>Harimau</em> karya Mochtar Lubis? Setidaknya jika kamu pernah membacanya, kamu akan paham benar kalimat tadi.</p>
-                    <p>Aku merasa tidak ada orang yang benar-benar memiliki masa lalu yang baik. Betapa bersyukurnya aku ketika teringat bahwa salah satu sahabat nabi yang dijamin masuk surga, masa lalunya jauh lebih buruk daripada masa laluku. Setidaknya aku belum pernah membunuh orang.</p>
-                    <p>Hari itu kala aku tertarik pada seorang gadis dengan kerudung panjang, aku selalu menarik diri, urung. Aku merasa tidak pernah pantas hendak menyandingnya atau bahkan sekedar menyapa. Aku duduk di bangku panjang, merenungi masa laluku. Aku bukan laki-laki baik, setidaknya aku menilai diriku sendiri begitu.</p>
-                    <p>Dulu aku pernah mencuri, sekali-dua kali masuk penjara. Pernah berzina dengan dalih suka sama suka ataupun sengaja mengunjungi tempat tersebut. Kabar baiknya adalah aku sempat hendak mati. Hal inilah yang mengubahku. Ketika aku merasa kematian begitu dekat, aku baru menyadari seluruh kesalahanku.</p>
-                    <p>Aku ingin berubah meskipun lingkungan lamaku berkata tidak mungkin. Sebab itulah, aku merantau jauh ke negeri ini untuk pergi jauh dari masa laluku. Nyatanya aku baru sadar, masa lalu bukanlah sesuatu yang bisa ditinggal. Sebab, ia adalah bagian dari diriku sendiri, ada di dalam diriku. Aku tidak mungkin bisa meninggalkannya. Kata temanku, aku harus memaafkan diriku sendiri dan berdamai dengan masa itu.</p>
-                    <p>Entah bagaimana, kurasa menjadi orang baik ternyata jauh lebih sulit daripada menjadi orang jahat. Setidaknya aku pernah jahat, jadi aku tahu bagaimana rasanya.</p>
-                    <p>Hari itu aku mengetik pesan pendek ke teman baikku yang baru aku kenal beberapa bulan. Seorang psikolog handal yang mungkin punya indra keenam. Juga seorang bapak dari anak-anak yang ramai dan cerdas. Dia membacaku, bayangan dia membaca apa yang sedang aku rasakan. Mungkin jika dia hidup di zaman Majapahit, dia akan dianggap dukun berilmu tinggi.</p>
-                    <p>Dia menjelaskan padaku lewat komunikasi internet:</p> 
-                    <p>Setiap orang memiliki masa lalu, baik itu masa lalu yang baik, atau buruk. Setiap hal di masa lalu tidak pernah ada yang bisa diubah, masa depanlah yang bisa diubah. Percayalah, di dunia ini hampir semua orang memakai topeng. Termasuk kamu, untungnya aku tidak mudah percaya dengan topengmu.</p>
-                    <p>Dan kamu tahu bagaimana rasanya berdamai dengan masa lalumu?</p>
-                    <p>Mungkin sama rasanya ketika kamu menceritakan tentang dirimu sendiri dengan leluasa kemudian aku bisa menerimamu. Tidak hanya kamu sebagai jasad, tapi juga dengan masa lalumu. Kamu mengakui kesalahanmu itu sebuah langkah yang baik.</p>
-                    <p>Dan percayalah, sekali kamu membuka topengmu ke hadapan orang yang kamu cintai dan kamu percayai, bila dia benar menerimamu, dia akan membuka topengnya pula di hadapanmu. Sehingga kalian benar-benar akan saling mengenal dan memiliki ruang privasi yang lebih besar. Bukankah sangat sulit bagi kita untuk mengizinkan orang lain masuk ke dalam diri kita?</p>
-                    <p>JIka kamu memang mencintai dia, ceritakanlah masa lalumu dengan lengkap. Di dunia ini banyak sekali orang baik dan orang yang bisa menerimamu, percayalah. Aku tidak ingin kamu membohongi dia. Bila di tengah perjalanan dia tahu kamu sebenarnya, hal buruk bisa terjadi. Lebih baik tahu sejak awal, kan?</p>
-                    <p>Manusia seperti kita ini pandai sekali bersikap manis, bersikap baik. Menyembunyikan diri di balik jas berdasi dan baju koko. Menyembunyikan dosa di balik kopiah dan gelang tasbih. Manusia selalu dilanda ketakutan, takut bila orang lain mengenalnya. Takut bila orang lain mengetahui aibnya. Hidup seperti itu sungguh memuakkan, bukan? Kamu sudah menjalaninya. </p>
-                    <p>Bila benar perempuan itu baik, Dia akan melihat masa depan dan memaafkan kesalahanmu. Sejauh kamu memang benar-benar beritikad baik. Di dunia ini masih banyak orang baik. Sayangnya, mereka ikut-ikutan bersembunyi. Kau bisa menemukan mereka, asal kamu pun menjadi baik. Jika kamu hanya berpura-pura baik, maka kamu akan bertemu dengan orang yang juga berpura-pura baik. Tidak mau, kan?</p>
-                    <p>Sambungan internet terputus oleh suara adzan.</p>
-                    <p>Kita lanjutkan besok, setelah kamu memantapkan keputusanmu. Semangat, Bro!</p>
-                    <p>Aku menutup layar ponsel. Setidaknya aku tahu, sejahat apa pun aku, Allah masih berkenan memanggilku untuk menyembah-Nya. Artinya, Dia masih memanggilku untuk Dia ampuni. Aku begegas mengambil wudhu.</p>  
+                      
 				</div>
-            </div>
-
-			<div  id="hujan-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>HUJAN</h1>
-                </div>
-                <div data-role="content" style="font-size:14px" >    
-					<h2>Nilai-Nilai dan Perempuan</h2> 
-					<p>Aku tidak sedang membicarakan bagaimana menilai perempuan, tapi tentang nilai-nilai dan perempuan. Dua hal yang berbeda yang akan aku kaitkan satu sama lain.</p>
-					<p>Dalam hidup ini setiap orang memiliki nilai-nilai yang dia pegang. Entah itu tentang nilai perasaannya sendiri, nilai agama, nilai etika, atau nilai orang tuanya. Apapun itu. Pertanyaannya, lantas apa hubungannya dengan perempuan?</p>
-					<p>Lagi-lagi tentang perasaan, kan?</p>
-					<p>Dalam situasi pra-nikah (tentu saja bukan pacaran yang aku maksud) seringkali perempuan menjadi korban perasaan oleh laki-laki yang tidak jelas maksud dan tujuan kedatangannya. Mendekat tapi tidak mau segera mengikat. Sok mengikat tapi tidak pernah berani berucap ijab.</p>
-					<p>Dalam banyak kasus yang terjadi, perempuan sering menjadi korban ketidak pastian laki-laki. Harus diketahui bahwa perempuan memang dilahirkan dengan perasaan yang lebih banyak dan lebih peka. Mereka perasa. Perhatian sedikit saja bisa mengaktifkan perasaannya.</p>
-					<p>Hubungan laki-laki dan perempuan memiliki perbedaan kebutuhan, dilihat dari sudut pandang masing-masing. Perempuan cenderung memiliki kebutuhan psikis seperti dicintai, dihargai, dilindungi, diperhatikan, dan sejenisnya. Sementara laki-laki lebih kepada kebutuhan biologis, tentang bagaimana dia menyalurkan hawa nafsunya. Tentu saja aku berharap ada yang pernah membaca masalah ini dalam kajian-kajian lain.</p> 
-					<p>Ketika seorang laki-laki memberikan perhatian, kasih sayang, atau perlindungan kepada oerempuan (meski perempuan itu "hanya" sekadar teman) itu dapat mengaktifkan perasaan perempuan. Kita menyebutnya GR (Gede Rasa). Hingga pada akhirnya muncul istilah PHP (Pemberi Harapan Palsu).</p>
-					<p>Dalam hubungan-hubungan yang tidak dibenarkan (bukan pernikahan), perempuan cenderung selalu menjadi korban. Sekali perempuan dikhianati dengan sangat, kemungkinan muncul sikap antipatinya yang sangat besar terhadap laki-laki. Muncul Ketidakpercayaannya kepada laki-laki dan dianggap semua laki-laki di dunia ini sama brengseknya.</p>
-					<p>Perasaan ini membuatnya tertekan sehingga sadar atau tidak sadar, perempuan telah menempatkan dirinya pada posisi yang membuat dirinya sulit bergerak. Hanya karena satu laki-laki brengsek yang pernah melukai perasaannya, dia menilai laki-laki lain sama brengseknya dan dia enggan kembali menghidupkan kepercayaan itu. Semacam trauma. Sehingga, dia tidak mau lagi membuka pintu hatinya untuk laki-laki lain yang memang berniat baik.</p>
-					<p>Hal ini sebenarnya sangat bisa dihindari sejak awal bila perempuan memiliki nilai-nilai yang dia pegang dengan tegas. Nilai yang membuat perempuan memiliki posisi tawar yang tinggi. Nilai yang membuat perempuan berani bertindak tegas terhadap laki-laki modus dengan tampang sok baik.</p>
-					<p>Nilai itu bisa berbeda bagi setiap perempuan. Aku tidak ingin mengatakan bahwa harus nilai agama yang dipegang. Aku Percaya bahwa perempuan (yang membaca tulisan ini) memiliki pengalaman hidup yang berbeda, yang membuat pilihan diri pun menjadi berbeda.</p>
-					<p>Ada teman perempuanku yang memegang teguh nilai agamanya dan tentu tidak akan pernah pacaran. Seharusnya, dengan nilai yang dia pegang itu, dia bisa bersikap tegas terhadap laki-laki dan tidak mudah diperdaya.</p>
-					<p>Temanku yang lain memegang nilai-nilai sosial dan etikanya. Meski tidak begitu taat beragama, dia paham betul tentang apa yang dia percayai soal hubungan pernikahan dan sebelumnya. Pada akhirnya dia mampu menjaga dirinya dengan baik dan bisa benar-benar menghajar laki-laki yang berani macam-macam kepadanya.</p>
-					<p>Intinya, perempuan harus memiliki nilai yang dia pegang dan percayai. Dengan begitu, dia memiliki landasan sikap dan ketegasan terhadap sesuatu yang datang kepadanya, termasuk kedatangan laki-laki asing dalam hidupnya. Dengan memegang nilai-nilai itu, perempuan akan memiliki titik tolak untuk mengambil sikap.</p>
-					<p>Terlalu banyak sudah perempuan yang terombang-ambing oleh perasaan yang tidak jelas pijakannya. Seolah hidupnya benar-benar hancur oleh sikap laki-laki yang dia temui dan kemudian melukainya. Perasaanmu memerlukan pijakan, agar ia bisa berdiri tegak meski badai memporak-porandakan hatimu. Bukan begitu?</p>
-					<p>Sudahkah kamu temukan pijakanmu, Perempuan?</p>             
-                </div>
-            </div>
-
-			<div  id="reda-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>REDA</h1>
-                </div>
-                <div data-role="content" style="font-size:14px" >
-					<h2>Ada di Langit</h2>
-					<p>Aku tinggal di bumi, tapi carilah aku di langit. Sebab aku tertahan di antara bintang-bintang. Jemput aku dengan doa-doa setelah shalatmu. Tengadahkan tanganmu atau bersujud, berdoa-lah untuk memintaku. Aku tertahan dan garis batas yang membentang di antara kita selebar langit dan bumi.</p>
-					<p>Aku tinggal di bumi, tapi carilah aku di langit. Di sepertiga malammu saat Tuhan turun ke langit bumi. Mintalah aku yang berada di genggaman tangan-Nya. Percuma mencariku di bumi, sebab kunci itu ada di langit. Kunci yang akan menghapus garis batas di antara kita. Mengubah garis yang tadinya neraka menjadi surga.</p>
-					<p>Aku berada di tempat yang tidak kau temui di bumi, tapi kau bisa menemuiku di langit. Meski bukan wujud kita yang bertemu. Melainkan doa-doa kita yang menggetarkan singgasana-Nya. Temukan aku di langit. Di dalam doa-doa panjangmu, di dalam harapanmu.</p>
-					<p>Meski kita tidak saling tahu nama, tidak saling tahu rupa, jemputlah aku di langit. Sebab aku tahu, kau mengenalku bukan karena nama dan rupa. Doa kita telah bertemu sebelum fisik kita.</p> 
-					<p>Mudah bagi-Nya membuat kita kemudian bertemu. Tidak hanya bertemu, tapi juga dipersatukan. Sebagaimana doa-doa yang sebelumnya telah kita panjatkan. </p>
-					<p>Pertemuan yang pertama berada di langit, kan? Sekarang kau tahu mengapa aku memintamu mencariku di langit?</p>             
-                </div>
-            </div>
-			
+            </div>			
 			<div  id="quiz-page" data-role="page">
                             <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
                                 <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
@@ -318,12 +444,14 @@
                     <h1>TENTANG PENULIS</h1>
                 </div>
                 <div data-role="content"  style="font-size:14px">
-                    <h2>Kurniawan Gunadi</h2>
-                    <p>Kurniawan Gunadi lahir di Purworejo, Jawa Tengah, 17 November 1990. Anak semata wayang dari pasangan guru sekolah dasar ini merupakan lulusan Desain Produk, Institut Teknologi Bandung 2009.</p>
-                    <p><em>Hujan Matahari</em> (2014) merupakan buku pertamanya yang berisikan catatan perjalanan pikirannya yang sebelumnya dimuat di dalam blog kurniawangunadi.tumblr.com. Ditambah dengan naskah-naskan baru yang tidak pernah dipublikasikan sebelumnya. </p>
-                    <p>Latar belakang pendidikan di dunia seni rupa dan desain tidak membuatnya berhenti menulis. Blog pribadinya selalu memuat tulisan baru. <em>Hujan Matahari</em> merupakan titik tolaknya untuk masuk ke dalam dunia kepenulisan lebih jauh.</p>
-                    <p>Beberapa prosa dalam buku ini pun dapat didengar melalui <em>soundcloud</em> "suaracerita" yang merupakan proyek bersama rekannya, Alfina. Keduanya merupakan rekan satu organisasi di Forum Indonesia Muda. Suaracerita mengangkat tulisan Kurniawan Gunadi menjadi tidak hanya dibaca, tetapi juga bisa didengarkan. </p>
+                    <h2>Yoga Warisman</h2>
+                    
                 </div>
+		<div data-role="content"> 
+			<button onclick="enableMute()" type="button">Mute sound</button>
+			<button onclick="disableMute()" type="button">Enable sound</button>
+			<button onclick="checkMute()" type="button">Check muted status</button>		
+		</div>    
             </div>
 		
 		
